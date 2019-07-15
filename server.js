@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 //Import routes
 const users = require("./routes/api/users");
@@ -8,12 +9,16 @@ const posts = require("./routes/api/posts");
 
 const app = express();
 
+//Bodu parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 //Get mongoURI for connecting to DB
 const db = require("./config/keys").mongoURI;
 
 //Connect to mongoDB
 mongoose
-	.connect(db)
+	.connect(db, { useNewUrlParser: true })
 	.then(() => console.log("MongoDB connected.."))
 	.catch(err => console.log(err));
 
