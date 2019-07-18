@@ -18,7 +18,8 @@ const UserSchema = new Schema({
 		required: true
 	},
 	profile_picture: {
-		type: String
+		type: String,
+		default: "No Image"
 	},
 	date: {
 		type: Date,
