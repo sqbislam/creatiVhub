@@ -1,0 +1,88 @@
+/* font-family: 'Josefin Sans', sans-serif;
+font-family: 'Cabin', sans-serif;
+font-family: 'Quicksand', sans-serif; */
+
+.nav-link,
+.navbar-brand {
+	font-size: 1.2em;
+	font-family: "Cabin", sans-serif;
+}
+
+.back {
+	background: rgba(1, 0, 48, 1) 0%;
+}
+
+.center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.form-label {
+	font-family: "Quicksand", sans-serif;
+}
+
+.navbar-custom {
+	background: rgba(1, 0, 48, 1) 0%;
+}
+.nav-avatar {
+	width: 35px;
+	height: 35px;
+	float: left;
+	border-radius: 50%;
+	margin: 5px;
+}
+
+.sidebar {
+	float: left;
+	width: 25%;
+	height: 100%;
+	padding: 10px 10px 0px 0px;
+}
+
+.sidebar-item {
+	height: 50px;
+	cursor: pointer;
+	font-family: "Quicksand", sans-serif;
+	font-size: 15pt;
+
+	list-style: none;
+}
+.sidebar-item:hover {
+	font-size: 18pt;
+	font-weight: 600;
+}
+
+.searchbar {
+	min-width: 40%;
+}
+
+section:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+	.sidebar,
+	.content {
+		width: 100%;
+		height: auto;
+	}
+	.searchbar {
+		min-width: 60%;
+	}
+	.nav-avatar {
+		display: none;
+	}
+	.nav-item {
+		display: none;
+	}
+	.remove {
+		display: none;
+	}
+}

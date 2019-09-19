@@ -1,0 +1,197 @@
+<html>
+	<html>
+		<head>
+			<!-- Bootstrap CDNS -->
+			<link
+				rel="stylesheet"
+				href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+				integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+				crossorigin="anonymous"
+			/>
+			<script
+				src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+				crossorigin="anonymous"
+			></script>
+			<script
+				src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+				integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+				crossorigin="anonymous"
+			></script>
+			<script
+				src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+				integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+				crossorigin="anonymous"
+			></script>
+
+			<!-- Google Fonts -->
+			<link
+				href="https://fonts.googleapis.com/css?family=Cabin|Josefin+Sans|Quicksand&display=swap"
+				rel="stylesheet"
+			/>
+
+			<!-- Font Awesome -->
+			<link
+				href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+				rel="stylesheet"
+				integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+				crossorigin="anonymous"
+			/>
+
+			<!-- Custom CSS -->
+			<link rel="stylesheet" href="./css/custom.css" />
+
+			<title>Home</title>
+		</head>
+
+		<body>
+			<nav
+				class="navbar navbar-expand-lg navbar-custom navbar-dark"
+				id="bg-dark"
+			>
+				<a class="navbar-brand" href="#">creatiVhub</a>
+
+				<!-- Search bar -->
+
+				<form class="searchbar form-inline my-1 my-lg-0 justify-content-end">
+					<input
+						class="form-control ml-2"
+						type="search"
+						placeholder="Search"
+						aria-label="Search"
+						style="width: 80%"
+					/>
+					<span class="btn"
+						><a href="#" class="text-white"><i class="fa fa-search "></i></a
+					></span>
+				</form>
+
+				<button
+					class="remove navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div
+					class="remove collapse navbar-collapse justify-content-end"
+					id="navbarNav"
+				>
+					<ul class="navbar-nav mr-5">
+						<!-- Nav Items -->
+						<li class="nav-item mx-auto">
+							<div class="row mr-sm-1">
+								<table>
+									<tr>
+										<img
+											src="./images/img_avatar.png"
+											alt="avatar"
+											class="nav-avatar"
+										/>
+									</tr>
+									<tr>
+										<a class="nav-link" href="#">Profile</a>
+									</tr>
+								</table>
+							</div>
+						</li>
+						<li class="nav-item mx-auto">
+							<a class="nav-link" href="#">Feed</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</body>
+	</html>
+
+	<div class="container">
+		<h2 class="display-4 text-center p-3">Create Your Profile</h2>
+		<p class="lead text-center">
+			Add some basic information to make your profile stand out
+		</p>
+		<small class="d-block pb-3">* = required field</small>
+		<hr />
+		<div class="row nogutters">
+			<div class="col-md-6">
+				<div class="card" style="max-width: 100%">
+					<form class="m-4">
+						<!-- Handle -->
+						<div class="form-group">
+							<label class="form-label" for="handle">Handle</label>
+							<input class="form-control" name="handle" />
+						</div>
+						<!-- Company -->
+						<div class="form-group">
+							<label class="form-label" for="company">Company</label>
+							<input class="form-control" name="company" />
+						</div>
+						<!-- Website -->
+						<div class="form-group">
+							<label class="form-label" for="website">Website</label>
+							<input class="form-control" name="website" />
+						</div>
+						<!-- Location -->
+						<div class="form-group">
+							<label class="form-label" for="location">Location</label>
+							<input class="form-control" name="location" />
+						</div>
+						<!-- Status -->
+						<div class="form-group">
+							<label class="form-label" for="status">Status</label>
+							<input class="form-control" name="status" />
+						</div>
+						<!-- Skills -->
+						<div class="form-group">
+							<label class="form-label" for="skills">Skills</label>
+							<input class="form-control" name="skills" />
+							<small class="form-text text-muted"
+								>Please use comma separated values (eg.
+								HTML,CSS,JavaScript,PHP)</small
+							>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Second Part of Form -->
+
+			<div class="col-md-6">
+				<h6 class="p-4">Social Links</h6>
+				<div class="card" style="max-width: 100%">
+					<form class="m-4">
+						<!-- Facebook -->
+						<div class="form-group">
+							<label class="form-label" for="facebook">Facebook</label>
+							<input class="form-control" name="facebook" />
+						</div>
+						<!-- Twitter -->
+						<div class="form-group">
+							<label class="form-label" for="twitter">Twitter</label>
+							<input class="form-control" name="twitter" />
+						</div>
+						<!-- Instagram -->
+						<div class="form-group">
+							<label class="form-label" for="instagram">Instagram</label>
+							<input class="form-control" name="instagram" />
+						</div>
+						<!-- LinkedIn -->
+						<div class="form-group">
+							<label class="form-label" for="linkedIn">LinkedIn</label>
+							<input class="form-control" name="linkedIn" />
+						</div>
+						<!-- Github -->
+						<div class="form-group">
+							<label class="form-label" for="github">Github</label>
+							<input class="form-control" name="github" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</html>
