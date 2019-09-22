@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/auth-actions";
+import { clearCurrentProfile } from "./actions/profile-actions";
 
 import { Provider } from "react-redux";
 import store from "./store";
@@ -13,6 +14,7 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import Dashboard from "./components/dashboard/Dashboard";
 
 import "./App.css";
 
@@ -30,7 +32,8 @@ if (localStorage.jwtToken) {
 	if (decoded.exp < currentTime) {
 		//Logout User
 		store.dispatch(logoutUser());
-		//TODO Clear Current Profile
+		//Clear Current Profile'
+		store.dispatch(clearCurrentProfile());
 		//Redirect to Login
 		window.location.href = "/login";
 	}
@@ -47,6 +50,8 @@ class App extends Component {
 						<Route exact path="/register" component={Register} />
 
 						<Route exact path="/login" component={Login} />
+
+						<Route exact path="/dashboard" component={Dashboard} />
 
 						<Footer />
 					</div>
