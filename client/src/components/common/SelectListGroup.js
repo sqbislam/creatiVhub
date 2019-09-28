@@ -2,52 +2,39 @@ import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
-const TextFieldGroup = ({
-	name,
-	placeholder,
-	value,
-	label,
-	error,
-	info,
-	type,
-	onChange,
-	disabled
-}) => {
+const SelectListGroup = ({ name, value, error, info, options, onChange }) => {
+	//Fetching options and making formatted option tags
+	const selectOptions = options.map(option => (
+		<option key={option.label} value={option.value}>
+			{option.label}
+		</option>
+	));
 	return (
 		<div className="form-group">
-			<label className="form-label" htmlFor={name}>
-				{label}
-			</label>
-			<input
+			<select
 				name={name}
 				className={classnames("form-control", {
 					"is-invalid": error
 				})}
-				placeholder={placeholder}
-				type={type}
 				value={value}
 				onChange={onChange}
-				disabled={disabled}
-			/>
+			>
+				{/* Render the options tags here */}
+				{selectOptions}
+			</select>
 			{info && <small className="form-text text-muted">{info}</small>}
 			{error && <div className="d-block invalid-feedback">{error}</div>}
 		</div>
 	);
 };
 
-TextFieldGroup.propTypes = {
+SelectListGroup.propTypes = {
 	name: PropTypes.string.isRequired,
 	value: PropTypes.string.isRequired,
-	label: PropTypes.string,
-	type: PropTypes.string.isRequired,
-	placeholder: PropTypes.string,
 	error: PropTypes.string,
 	info: PropTypes.string,
-	onChange: PropTypes.func.isRequired,
-	disabled: PropTypes.string
+	options: PropTypes.array.isRequired,
+	onChange: PropTypes.func.isRequired
 };
 
-TextFieldGroup.defaultProps = {
-	type: "text"
-};
-export default TextFieldGroup;
+export default SelectListGroup;

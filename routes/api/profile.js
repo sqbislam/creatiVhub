@@ -32,8 +32,9 @@ router.get(
 				if (!profile) {
 					errors.noprofile = "No profile found";
 					res.status(404).json(errors);
+				} else {
+					res.json(profile);
 				}
-				res.json(profile);
 			})
 			.catch(err => console.log(err));
 	}

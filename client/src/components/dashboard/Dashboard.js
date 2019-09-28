@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Spinner from "../common/Spinner";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profile-actions";
@@ -16,9 +18,25 @@ class Dashboard extends Component {
 		let dashBoardContent;
 
 		if (profile === null || loading) {
-			dashBoardContent = <h4>Loading...</h4>;
+			dashBoardContent = <Spinner />;
 		} else {
-			dashBoardContent = <h1>MAKE A PROFILE </h1>;
+			//If no profile created by logged in user,prompt to make profile
+			if (Object.keys(profile).length <= 0) {
+				dashBoardContent = (
+					<div>
+						<p className="lead text-muted">Welcome {user.name}</p>
+						<p>
+							You have not created a profile yet. Why not make it now and Get
+							Started
+						</p>
+						<Link to="/create-profile" className="btn btn-lg btn-info m-5">
+							Create Profile
+						</Link>
+					</div>
+				);
+			} else {
+				dashBoardContent = <h4>TODO Display user profile</h4>;
+			}
 		}
 		return (
 			<div className="dashboard">

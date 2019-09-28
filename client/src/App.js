@@ -7,7 +7,7 @@ import { clearCurrentProfile } from "./actions/profile-actions";
 
 import { Provider } from "react-redux";
 import store from "./store";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
@@ -15,6 +15,9 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Dashboard from "./components/dashboard/Dashboard";
+import PrivateRoute from "./components/common/PrivateRoute";
+
+import CreateProfile from "./components/create-profile/CreateProfile";
 
 import "./App.css";
 
@@ -34,8 +37,6 @@ if (localStorage.jwtToken) {
 		store.dispatch(logoutUser());
 		//Clear Current Profile'
 		store.dispatch(clearCurrentProfile());
-		//Redirect to Login
-		window.location.href = "/login";
 	}
 }
 
@@ -51,8 +52,17 @@ class App extends Component {
 
 						<Route exact path="/login" component={Login} />
 
-						<Route exact path="/dashboard" component={Dashboard} />
+						<Switch>
+							<PrivateRoute exact path="/dashboard" component={Dashboard} />
+						</Switch>
 
+						<Switch>
+							<PrivateRoute
+								exact
+								path="/create-profile"
+								component={CreateProfile}
+							/>
+						</Switch>
 						<Footer />
 					</div>
 				</Router>
