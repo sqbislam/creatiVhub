@@ -22,6 +22,7 @@ font-family: 'Quicksand', sans-serif; */
 }
 .nav-item {
 	display: inline-block;
+	margin-left: 5px;
 }
 
 .center {

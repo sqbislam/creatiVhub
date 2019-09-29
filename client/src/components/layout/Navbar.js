@@ -31,6 +31,11 @@ class Navbar extends Component {
 			<ul className="navbar-nav in-line mr-3">
 				{/* <!-- Nav Items --> */}
 				<li className="nav-item">
+					<Link className="nav-link" to="/dashboard">
+						Dashboard
+					</Link>
+				</li>
+				<li className="nav-item">
 					<a
 						href=""
 						onClick={this.onLogoutClick.bind(this)}
