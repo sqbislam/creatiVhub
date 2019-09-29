@@ -251,7 +251,7 @@ class CreateProfile extends Component {
 								{socialInputs}
 								<input
 									type="submit"
-									value="Submit"
+									value="submit"
 									className="btn btn-info btn-block m-4"
 								/>
 							</form>
