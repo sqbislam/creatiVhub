@@ -8,6 +8,8 @@ import {
 	deleteAccount
 } from "../../actions/profile-actions";
 import ProfileActions from "./ProfileActions";
+import Experience from "./Experience";
+import Education from "./Education";
 
 class Dashboard extends Component {
 	//get current Profile is called
@@ -51,7 +53,8 @@ class Dashboard extends Component {
 							Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
 						</p>
 						<ProfileActions />
-						{/* TODO Experience and Education */}
+						<Experience experience={profile.experience} />
+						<Education education={profile.education} />
 
 						<div style={{ marginBottom: "60px" }} />
 
