@@ -4,7 +4,7 @@ class Landing extends Component {
 	render() {
 		return (
 			<div>
-				<div class="row" style={{ height: 800 + "px" }}>
+				<div className="row" style={{ height: 800 + "px" }}>
 					<div className="col-md-5 m-0">
 						<div className="container"></div>
 					</div>
